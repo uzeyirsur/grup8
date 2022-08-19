@@ -29,7 +29,7 @@ git checkout 9ddb9(yani hashimizin ilk 5 harfi) -- dosya adı :        silinmiş
 git log --all --decorate --oneline --graph :                          tek satırda commit historymizi verir.
 alias graph="git log --all --decorate --oneline --graph " : uydurma commend (sadece graph yazmamızla tırnak işareti içindeki komutu yapar.)
 git branch SDN : SDN adında yeni bir branch yapar.
-git branch : bize olan tüm branchları gösterir.
+git branch :    bize olan tüm branchları gösterir.
 * ( komut değildir) : asteriks bize hangi branchin checked out durumda olduğunu yani HEAD pointerin nerede oldugunu gösterir.
 git checkout SDN : HEAD pointer SDN branchına geçer.
 git commit -a -m "başlık" : working tree de yaptığımız çalışmayı hem stageler hem commitler.
@@ -46,17 +46,17 @@ git stash apply :en sonki stashimizi tekrar uygular
 git stash save "başlık" : stashimize isim koyarız
 
 
+                        ÜÇÜNCÜ VIDEO
 
 
 
-
-git clone github linkimiz : githubdaki çalışmamızı indirir.
-git remote : bizim remotumuzu gösterir.
-git remote -v : bizim remotumuzu adresiyle beraber verir.
+git clone github linkimiz :      githubdaki çalışmamızı indirir.
+git remote  :                          bizim remotumuzu gösterir.
+git remote -v :                      bizim remotumuzu adresiyle beraber verir.
 git fetch remote u muzun ismi :  remotumuzdaki commitleri github sitesinden bulur, local ortamımıza günceller/getirir.
-git merge origin/master : bunu yaparak origindeki branchımızı localimizdeki master branchla birleştirdik.
-git pull : git fetch and merge işini tek komutla yapar.
-git push origin master: editlerimizi origin isimli remotumuza ve origindeki main branchımıza yollar.GitHub sitesine.
-git remote add remote ismi, aldığımız çalışmanın kişinin kendisinden github linki : commitleri aldığımız kişiye direkt bağlanır.
-git remote remove remote ismi : ismini yazdığımız remote u siler.
-git merge upstream/master :upstream isimli remote daki master brach tan local master branchimize commitleri birleştirir(merge eder).
+git merge origin/master :       bunu yaparak origindeki branchımızı localimizdeki master branchla birleştirdik.
+git pull :                                  git fetch and merge işini tek komutla yapar.
+git push origin master:            editlerimizi origin isimli remotumuza ve origindeki main branchımıza yollar.GitHub sitesine.
+git remote add remote ismi, aldığımız çalışmanın kişinin kendisinden github linki :      commitleri aldığımız kişiye direkt bağlanır.
+git remote remove remote ismi :      ismini yazdığımız remote u siler.
+git merge upstream/master :        upstream isimli remote daki master brach tan local master branchimize commitleri birleştirir(merge eder).
