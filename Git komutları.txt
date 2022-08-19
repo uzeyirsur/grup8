@@ -1,0 +1,62 @@
+gimkdir klasör ismi :          Klasör oluşturma
+cd klasör ismi :                içine girme
+vi yeni file ismi :             yeni bir dosya oluşturma ve içine yazma
+ls :                                   listeleme
+git init :                            git oluşturma
+git config --global user.name "Uzeyir Sur" :               isim yazma
+git config --global user.email "t.sur@hotmail.com"  :     email yazma
+git config --list :                                   isim, email gibi bilgileri edinme
+git status :        bize working treede ve staging areada neyin ne durumda oldugunu söyler
+                    (mesela "untracked bir dosya var ve onu nasıl ekleyeceğimizi " söyler)
+
+git add . :                                                          working tree deki untracked tüm dosyaları ı staging area ya atar ve dosyamız tracked hale gelir.
+git commit -m "başlık adımız" :                        staging areada ne varsa yeni bir commit olarak history mize ekler.
+git log :                                                            commit grafiğimiz hakkında bilgi verir (ne dosyamız var, kim, ne zaman yaptı gibi), hash value muzu verir (örn:eb37364)
+cp dosya1 dosya2 :                                  kopyalar
+git diff :                                       dosyamızın working tree ve staging areadaki farklarını bize verir.
+git diff --staged :                         dosyamızın staging area ve historyde bulunan en son commitimiz arasındaki farkı verir.(diğer bi değişle commitlenmek üzere olan stagedeki girdilerimizi söyler)
+git log -p :                                   commit grafiğimizi ve içeriğini ayrı ayrı verir.
+rm dosya ismi :                           dosyayı siler (hem working tree den hem de staging areadan)
+git commit :                                 yeni bir commit girmemiz için default menüyü açar( -m ile yaptığın şeyi orada yapıyorsun, second line a da yazabiliyorsun)
+git checkout -- dosya adı :           staging areadaki son durumu working tree ye koyar.Working treede o dasyadaki son ekledikleriniz silinir.
+git reset HEAD dosya adı :        Historydeki son commiti staging areaya koyar.Staging areada o dosyadaki son eklemeleriniz silinir.Fakat working treemizde son değişiklikler hala durmaktadır.
+git log -- dosya adı :                   ismini yazdığımız dosyayı etkileyen commit bilgilerini verir.
+git checkout 9ddb9(yani hashimizin ilk 5 harfi) -- dosya adı :        silinmiş dosyamızı hem working tree ye hemde staging areaya geri getirir.
+
+
+                                                                                      İKİNCİ VIDEO
+
+git log --all --decorate --oneline --graph :                          tek satırda commit historymizi verir.
+alias graph="git log --all --decorate --oneline --graph " : uydurma commend (sadece graph yazmamızla tırnak işareti içindeki komutu yapar.)
+git branch SDN : SDN adında yeni bir branch yapar.
+git branch : bize olan tüm branchları gösterir.
+* ( komut değildir) : asteriks bize hangi branchin checked out durumda olduğunu yani HEAD pointerin nerede oldugunu gösterir.
+git checkout SDN : HEAD pointer SDN branchına geçer.
+git commit -a -m "başlık" : working tree de yaptığımız çalışmayı hem stageler hem commitler.
+git diff master..SDN : Bize SDN yi mastera merge eedince  dosyada neyin değişeceğini gösterir.
+git merge SDN : bulunduğumuz brancha (master) SDN yi merge eder(birleştirir,ekler)
+git branch --merged : hangi brachlerimizin merge edildiğini gösterir.
+git branch -d SDN : SDN branchimizi siler.
+git branch -D auth : henüz merge edilmemiş branchimizi siler.(burada auth oluyor.)
+git checkout -b dev : Hem dev adında bir branch oluşturdu hemde checkout yaparak o branchimize girdi.(Head pointerımızı oraya aldı)
+git merge --abort : mergi iptal eder.
+git stash list : stash listemizi gösterir.
+git stash -p :her stashtaki editlerimizi ayrı ayrı görürüz.
+git stash apply :en sonki stashimizi tekrar uygular
+git stash save "başlık" : stashimize isim koyarız
+
+
+
+
+
+
+git clone github linkimiz : githubdaki çalışmamızı indirir.
+git remote : bizim remotumuzu gösterir.
+git remote -v : bizim remotumuzu adresiyle beraber verir.
+git fetch remote u muzun ismi :  remotumuzdaki commitleri github sitesinden bulur, local ortamımıza günceller/getirir.
+git merge origin/master : bunu yaparak origindeki branchımızı localimizdeki master branchla birleştirdik.
+git pull : git fetch and merge işini tek komutla yapar.
+git push origin master: editlerimizi origin isimli remotumuza ve origindeki main branchımıza yollar.GitHub sitesine.
+git remote add remote ismi, aldığımız çalışmanın kişinin kendisinden github linki : commitleri aldığımız kişiye direkt bağlanır.
+git remote remove remote ismi : ismini yazdığımız remote u siler.
+git merge upstream/master :upstream isimli remote daki master brach tan local master branchimize commitleri birleştirir(merge eder).
